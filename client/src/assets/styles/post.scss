@@ -18,10 +18,19 @@
     }
     
 
-    .post-date {
+   
+    .post-details{
         font-size: 14px;
         text-align: left;
         color: #94a3b8;
+        display: flex;
+        
+        img{
+            width: 16px;
+            height: 16px;
+            margin-left: 16px;
+            margin-top: 3px;
+        }
     }
 
     .post-content {
