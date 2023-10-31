@@ -1,0 +1,49 @@
+.blog-post {
+    padding-left: 120px;
+    padding-right: 120px;
+    margin: 10px;    
+    margin-bottom: 64px;
+    align-self: center;
+    width: 840px;
+    height: 180px;
+    margin-left: 15%;
+    
+    .post-title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+        text-align: left;
+        color: #ffffff; 
+        text-decoration: none;
+    }
+    
+
+    .post-date {
+        font-size: 14px;
+        text-align: left;
+        color: #94a3b8;
+    }
+
+    .post-content {
+        text-align: left;
+        margin-right: 1%;
+        color: #94a3b8;
+        width: 100%;
+        
+        .post-description{
+            justify-content: center;
+        }
+    }
+    img{
+        float: right;
+        width: 170px;
+        height: 130px;
+    }
+
+    
+    .read-more-href{
+        text-decoration: none;
+    }
+
+    
+}
