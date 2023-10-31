@@ -1,0 +1,10 @@
+node_modules
+temp
+build
+dist
+*.env
+!*.env.template
+secret.*
+Thumbs.db
+Thumb.db
+*.log
