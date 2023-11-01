@@ -10,9 +10,8 @@
     
     background-color: #007fff;
     
-    padding-top: 24px;
-    padding-right:42% ;
-    padding-left:36% ;
+    
+    
     #home{
       font-weight: 500;
     }
@@ -38,6 +37,10 @@
     .nav1{
       font-weight: 600;
 
+    }
+    .navs{
+      padding: 8px;
+      margin: auto;
     }
   
   
@@ -127,6 +130,10 @@
     padding-bottom: 80px;
     font-family: 'raleway';
     text-align: center;
+    margin-top: 40px;
+    p{
+      margin: auto;
+    }
   }
   
   #home,
@@ -157,4 +164,31 @@
     height: 200px;
   
   }
+
+  .posts{
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    .logo{
+      display: flex;
+      img{
+        display: none;
+      
+      }
+      p{
+        display: flex;
+      }
+    }
+    .navbar {
+      a {
+        padding: 8px;
+      }
+    }
+  
+    .logo2 {
+      display: block;
+    }
+  }
+  
+ 
   
