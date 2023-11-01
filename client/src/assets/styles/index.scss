@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'raleway'; 
-    src: url('../fonts/Raleway/Raleway-VariableFont_wght.ttf') format('woff2');
+    src: url('../fonts/PlusJakartaSans-Medium.ttf') format('woff2');
     font-weight: normal;
    
   }
@@ -9,16 +9,20 @@
   .navbar {
     
     background-color: #007fff;
-    padding-right:40% ;
-   
     
+    padding-top: 16px;
+    padding-right:42% ;
+    padding-left:36% ;
+    #home{
+      font-weight: 500;
+    }
     a {
       
       color: #000000;
       text-align: center;
-      padding: 14px 16px;
+      padding: 4px 16px 4px 16px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-family: 'raleway';
   
     }
@@ -28,7 +32,7 @@
       box-shadow: #9497974f;
       background-color: #0024471a;
       color: #000000;
-      border-radius: 15px 15px 15px 15px;
+      border-radius: 10px 10px 10px 10px;
     }
   
   
@@ -39,7 +43,17 @@
     
   }
   
-  
+  .icons{
+    background-color: #007fff;
+    display: flex;
+    padding: 16px;
+    img{
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
   
   
   .about {
@@ -50,7 +64,7 @@
     padding-bottom: 2%;
     .name {
       font-weight: 900;
-      font-size: 48px;
+      font-size: 30px;
   
     }
   
@@ -62,16 +76,25 @@
   
   .logo {
     background-color: #007fff;
-  
+    padding-top: 32px;
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    p{
+      padding: 5px;
+    }
     img {
       width: 20%;
       height: auto;
-      margin-right: 40%;
-      margin-left: 5%;
+      
+      margin-left: 16px;
+      margin-bottom: 24px;
       margin-top: 0.5%;
-      width: 405px;
-      height: 56px;
-      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 4px;
+     
   
     }
   }
@@ -82,9 +105,9 @@
     margin-right: 40%;
     margin-left: 40%;
     margin-top: 0.5%;
-    width: 160px;
-    height: 120px;
-    border-radius: 5px;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
   
   }
   

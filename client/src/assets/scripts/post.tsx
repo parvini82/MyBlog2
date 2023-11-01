@@ -20,7 +20,7 @@ function Post(props: PostProps) {
           <h2 className="post-title">{props.title}</h2>
         </a>
         <div className="post-details">
-          <p className="post-date">Posted on {props.date}  </p>
+          <p className="post-date">{props.date}</p>
           <img src="./assets/images/bookicon.png"></img>
           <p className="post-readTime">{props.readTime}</p>
           
