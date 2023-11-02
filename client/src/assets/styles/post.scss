@@ -6,10 +6,10 @@
   }
 
 .blog-post {
-    padding: 40px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 56px;
+    padding-right: 56px;
     margin: auto;
+    padding-bottom: 64px;
     
     align-self: center;
     width: 840px;
@@ -23,6 +23,7 @@
         text-align: left;
         color: #ffffff;
         text-decoration: none;
+        margin-bottom: 8px;
     }
 
 
@@ -32,7 +33,7 @@
         text-align: left;
         color: #94a3b8;
         display: flex;
-
+        
         img {
             width: 20px;
             height: 20px;
@@ -49,6 +50,7 @@
 
         .post-description {
             justify-content: center;
+            text-overflow: ellipsis;
         }
     }
 
