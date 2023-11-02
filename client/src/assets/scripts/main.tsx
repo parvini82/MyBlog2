@@ -10,7 +10,7 @@ import '../styles/post.scss'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     
-    <Footer />
+    <Footer/>
     
   </React.StrictMode>,
 )
