@@ -3,6 +3,10 @@
     "version": "2.0.0",
     "author": "mohammad hosein parvini",
     "description": "a personal blog",
-    "license":"MIT",
-    "scripts": {}
+    "license": "MIT",
+    "scripts": {},
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }
