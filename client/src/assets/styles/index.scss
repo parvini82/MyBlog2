@@ -1,15 +1,17 @@
 @font-face {
     font-family: 'raleway'; 
-    src: url('../fonts/PlusJakartaSans-Medium.ttf') format('woff2');
+    src: url('../fonts/PlusJakartaSans-Regular.ttf') format('woff2');
     font-weight: normal;
    
   }
-  
+  .header{
+    background-color: #007fff;
+  }
   
   .navbar {
     
     background-color: #007fff;
-    
+    margin-top: 16px;
     
     
     #home{
