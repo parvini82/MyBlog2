@@ -6,15 +6,14 @@
   }
 
 .blog-post {
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: 64px;
+    padding-right: 64px;
     margin: auto;
-    padding-bottom: 64px;
+    
     
     align-self: center;
-    width: 840px;
-    height: 180px;
     
+    margin-bottom: 64px;
 
     .post-title {
         font-size: 30px;
@@ -51,15 +50,21 @@
         .post-description {
             justify-content: center;
             text-overflow: ellipsis;
-
+            font-size: 18px;
         }
     }
 
-    img {
+    .post-image {
         float: right;
-        width: 170px;
-        height: 130px;
+        width: 274px;
+        height: 144px;
         
+    }
+    .post-image2 {
+        display: none;
+        border-style: solid;
+			border-radius: 3%;
+			border-width: 2px;
     }
 
 
@@ -67,10 +72,16 @@
         text-decoration: none;
     }
     @media screen and (max-width: 768px) { 
-        .blog-post{
-            margin: 0;
-            padding: 0;
+        .post-image {
+            display: none;
         }
+        .post-title{
+            margin-bottom: 16px;
+        }
+        .post-description{
+            font-size: 18px;
+        }
+        
     }
 
 
