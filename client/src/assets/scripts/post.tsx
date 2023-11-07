@@ -15,7 +15,7 @@ function Post(props: PostProps) {
   return (
     <section className="blog-post">
       <a href="https://www.java.com/">
-      <img className="post-image" src={props.imageSrc} alt={props.imageAlt} />
+        <img className="post-image" src={props.imageSrc} alt={props.imageAlt} />
       </a>
       <div>
         <a href="https://www.java.com/" target="_blank" className="read-more-href">
@@ -25,14 +25,14 @@ function Post(props: PostProps) {
           <p className="post-date">{props.date}</p>
           <img src="./assets/images/bookicon.png"></img>
           <p className="post-readTime">{props.readTime}</p>
-          
+
         </div>
         <div className="post-content">
           <p className="post-description">{props.description}</p>
         </div>
-        
-          <img className="post-image2" src={props.imageSrc} alt={props.imageAlt} />
-        
+
+        <img className="post-image2" src={props.imageSrc} alt={props.imageAlt} />
+
 
       </div>
 
