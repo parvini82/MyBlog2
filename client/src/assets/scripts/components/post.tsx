@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate,Navigate } from 'react-router-dom';
+import { useNavigate,Navigate, redirect } from 'react-router-dom';
 
 type PostProps = {
   title: string;
@@ -13,12 +13,13 @@ type PostProps = {
 };
 
 function Post(props: PostProps) {
-  const navigate = useNavigate();
 
-  
+  const handlePostClick = () => {
+    redirect(`/post/${props.postId}`);
+  };
 
   return (
-    <section className="blog-post" >
+    <section className="blog-post" onClick={handlePostClick}>
       <a>
         <img className="post-image" src={props.imageSrc} alt={props.imageAlt} />
       </a>
