@@ -93,7 +93,7 @@
 	color: #ffffff;
 	background-color: #0d2240;
 	text-align: center;
-	padding:40px 32px 40px 32px;
+	padding: 40px 32px 40px 32px;
 
 	.name {
 		font-weight: 900;
@@ -237,6 +237,7 @@
 	.about {
 		padding-top: 32px;
 		padding-bottom: 32px;
+
 		img {
 			margin: auto;
 			margin-bottom: 10px;
@@ -253,7 +254,7 @@
 		.description {
 			font-size: 16px;
 			font-weight: 100;
-			
+
 		}
 	}
 
@@ -264,10 +265,11 @@
 	.logo2 {
 		display: block;
 	}
-	#posts{
+
+	#posts {
 		padding: 64px 16px 64px 16px;
 		padding-bottom: 64px;
-		
+
 	}
 
 	.blog-post {
@@ -277,21 +279,22 @@
 		margin: auto;
 		margin-bottom: 64px;
 
-		
+
 
 		align-self: center;
-		
 
-		.post-title{
+
+		.post-title {
 			font-size: 24px;
 			font-weight: 700;
 		}
-		.post-image2{
+
+		.post-image2 {
 			display: flex;
 			width: 358px;
 			height: 187px;
-			
-			
+
+
 		}
 	}
 
