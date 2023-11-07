@@ -1,4 +1,4 @@
-## Steps to Create a Rock, Paper, Scissors Game Project
+## Steps to Create Project
 
 1. **Project Structure Setup**
     - Created client and server folders.
