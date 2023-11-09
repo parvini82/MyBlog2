@@ -1,26 +1,22 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function PostPage() {
-  const { postId } = useParams();
-  const navigate = useNavigate();
+type PostProps = {
+  postId:number;
+};
 
-  // Replace this with your logic to fetch the post data based on the postId
-  const post = {
-    id: postId,
-    title: 'Sample Post Title',
-    content: 'This is the content of the sample post.',
-  };
-
+function PostPage(props: PostProps) {
+  
+  
+  
   const handleGoBack = () => {
-    navigate('/');
+    
   };
 
   return (
     <div>
-      <h1>Post: {post.title}</h1>
-      <p>{post.content}</p>
-      <button onClick={handleGoBack}>Go Back to Home</button>
+      <h1>Post: {props.postId}</h1>
+      
     </div>
   );
 }

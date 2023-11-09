@@ -1,32 +1,32 @@
 import React from 'react';
-import { useNavigate,Navigate, redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type PostProps = {
   title: string;
+  description: string;
   date: string;
+  readTime: string;
   imageSrc: string;
   imageAlt: string;
-  description: string;
   readMoreLink: string;
-  readTime: string;
-  postId:string;
+  postId: string;
 };
 
 function Post(props: PostProps) {
-
-  const handlePostClick = () => {
-    redirect(`/post/${props.postId}`);
-  };
+  console.log(props.postId);
+  console.log(<Link to={`/post/${props.postId}`} className="read-more-href">
+    <h2 className="post-title">{props.title}</h2>
+  </Link>);
 
   return (
-    <section className="blog-post" onClick={handlePostClick}>
-      <a>
-        <img className="post-image" src={props.imageSrc} alt={props.imageAlt} />
-      </a>
+	<a href={`/post/${props.postId}`} className="read-more-href">
+    <div className="blog-post">
+      <img className="post-image" src={props.imageSrc} alt={props.imageAlt} />
+
       <div>
-        <a target="_blank" className="read-more-href">
+        
           <h2 className="post-title">{props.title}</h2>
-        </a>
+        
         <div className="post-details">
           <p className="post-date">{props.date}</p>
           <img src="./assets/images/bookicon.png" alt="Book Icon" />
@@ -37,7 +37,8 @@ function Post(props: PostProps) {
         </div>
         <img className="post-image2" src={props.imageSrc} alt={props.imageAlt} />
       </div>
-    </section>
+    </div>
+	</a>
   );
 }
 
