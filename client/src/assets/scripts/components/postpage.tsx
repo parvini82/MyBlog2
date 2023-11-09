@@ -9,14 +9,16 @@ function PostPage(props: PostProps) {
   
   
   
-  const handleGoBack = () => {
-    
-  };
+  
 
   return (
     <div>
-      <h1>Post: {props.postId}</h1>
-      
+      <div className='header'></div>
+      <div className="body">
+        <div className='title'></div>
+        <div className='stats'></div>
+        <div className=''></div>
+      </div>
     </div>
   );
 }
