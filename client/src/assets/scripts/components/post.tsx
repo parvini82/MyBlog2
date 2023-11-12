@@ -8,7 +8,6 @@ type PostProps = {
   readTime: string;
   imageSrc: string;
   imageAlt: string;
-  readMoreLink: string;
   postId: string;
 };
 

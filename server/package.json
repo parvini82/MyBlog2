@@ -1,0 +1,13 @@
+{
+    "name": "MyBlog",
+    "author": "Mphammad Hosein Parvini",
+    "version": "2.0.0",
+    "type": "module",
+    "dependencies": {
+        "koa": "^2.14.2",
+        "mariadb": "^3.2.2",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.6.3",
+        "node": "^21.1.0"
+    }
+}

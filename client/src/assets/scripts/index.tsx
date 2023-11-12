@@ -47,7 +47,6 @@ if (currentUrl.split("/")[3] != 'post') {
 				readTime='3 min read'
 				imageSrc='./assets/images/Java.png'
 				imageAlt='image'
-				readMoreLink='https://www.java.com/'
 				postId="1"
 			/>
 			<Post
@@ -57,7 +56,6 @@ if (currentUrl.split("/")[3] != 'post') {
 				readTime='3 min read'
 				imageSrc='./assets/images/Java.png'
 				imageAlt='image'
-				readMoreLink='https://www.python.org/'
 				postId="2"
 			/>
 			<Post
@@ -67,7 +65,6 @@ if (currentUrl.split("/")[3] != 'post') {
 				readTime='3 min read'
 				imageSrc='./assets/images/Java.png'
 				imageAlt='image'
-				readMoreLink='https://www.java.com/'
 				postId="3"
 			/>
 			<Outlet />
