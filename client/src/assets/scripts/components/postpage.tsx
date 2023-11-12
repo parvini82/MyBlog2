@@ -14,14 +14,19 @@ function PostPage(props: PostProps) {
           <img src={logo} className="logo2"></img>
           <p>Mohammad Hosein Parvini</p>
         </div>
-        </div>
-        <div className="body">
-          <h1 className='title'>JS Front-End Libraries and Their Meta-Frameworks
-          </h1>
-          <div className='stats'></div>
-          <div className=''></div>
-        </div>
       </div>
+      <div className="body">
+        <h1 className='title'>JS Front-End Libraries and Their Meta-Frameworks
+        </h1>
+        <div className='stats'>
+          <div className='name'>
+            <img src={logo} className="logo2"></img>
+            <p>Mohammad Hosein Parvini</p>
+          </div>
+        </div>
+        <div className=''></div>
+      </div>
+    </div>
   );
 }
 
