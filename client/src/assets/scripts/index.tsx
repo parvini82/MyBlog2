@@ -5,7 +5,9 @@ import Home from './components/home';
 import Footer from "./components/footer";
 import Post from "./components/post";
 import PostPage from "./components/postpage";
-
+import '../styles/index.scss'
+import '../styles/post.scss'
+import '../styles/postpage.scss'
 
 
 function App() {

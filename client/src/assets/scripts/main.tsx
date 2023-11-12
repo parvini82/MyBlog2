@@ -2,8 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import Footer from './footer.tsx'
 // import Post from './post.tsx'
-import '../styles/index.scss'
-import '../styles/post.scss'
+
 
 
 
