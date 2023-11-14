@@ -1,4 +1,5 @@
 import logo from '../../images/logo2.png';
+import bookicon from '../../images/bookicon.png'
 
 type PostProps = {
   postId: number;
@@ -19,12 +20,37 @@ function PostPage(props: PostProps) {
         <h1 className='title'>JS Front-End Libraries and Their Meta-Frameworks
         </h1>
         <div className='stats'>
-          <div className='name'>
-            <img src={logo} className="logo2"></img>
-            <p>Mohammad Hosein Parvini</p>
+          <img src={logo} className="logo2"></img>
+          <p className='name'>Mohammad Hosein Parvini</p>
+          <p className='dot'>.</p>
+          <p className='date'>Nov 5, 2023</p>
+          <p className='dot'>.</p>
+          <div className='readtime'>
+            <img src={bookicon} />
+            <p >1 min read</p>
           </div>
         </div>
-        <div className=''></div>
+        <div className='content'>
+          AES Algorithms
+          There are different modes of operation for AES-256, which is a symmetric-key encryption algorithm that uses a 256-bit key. The choice of mode depends on the security and performance requirements of the application. Some of the common modes are:
+
+          CBC (Cipher Block Chaining): This mode encrypts each block of plaintext by XORing it with the previous ciphertext block. It requires an initialization vector (IV) to start the process. It provides confidentiality but not integrity or authentication¹.
+          CTR (Counter): This mode converts AES-256 into a stream cipher by generating a keystream from a nonce and a counter. It XORs the keystream with the plaintext to produce the ciphertext. It allows parallel encryption and decryption, and random access to the ciphertext. It also provides confidentiality but not integrity or authentication¹.
+          GCM (Galois/Counter Mode): This mode is an authenticated encryption mode that combines CTR mode with a message authentication code (MAC) based on Galois field arithmetic. It provides confidentiality, integrity and authentication, and is widely used in secure communication protocols¹².
+          XTS (XEX-based Tweaked-codebook mode with Ciphertext Stealing): This mode is designed for disk encryption and encrypts each sector of data with a different key derived from the original key and the sector number. It provides confidentiality and preserves the length of the plaintext. It also allows random access to the ciphertext¹³.
+          OCB (Offset Codebook): This mode is another authenticated encryption mode that combines a tweakable block cipher with a MAC. It provides confidentiality, integrity and authentication, and has high efficiency and low overhead. However, it is patented and may require a license to use¹⁴.
+        </div>
+        <div className='written-by'>
+          <p className='title'>Written by</p>
+          <div className='body'>
+            <div className='logo3'>
+              <img src={logo}></img>
+              <p className='name'>Mohammad Hosein Parvini</p>
+              <p className='about'>Student at K. N. Toosi University of Technology</p>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   );
