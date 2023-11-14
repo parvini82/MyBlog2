@@ -62,67 +62,121 @@
             color: white;
             text-align: center;
             justify-content: center;
-            padding: 0 200px 0 200px ;
+            padding: 0 200px 0 200px;
             margin-bottom: 36px;
-                img {
-                    width: 48px;
-                    height: 48px;
-                    margin: 0;
-                }
-                p {
-                    font-weight: 600;
-                    margin: auto;
-                }
-                .name{
 
+            img {
+                width: 48px;
+                height: 48px;
+                margin: 0;
+            }
+
+            p {
+                font-weight: 600;
+                margin: auto;
+            }
+
+            .name {}
+
+            .date {
+                color: #8e9db2;
+            }
+
+            .readtime {
+                display: flex;
+                font-size: 18px;
+                color: #8e9db2;
+                font-family: 'raleway-light';
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin: auto;
+                    margin-right: 8px;
                 }
-                .date{
-                    color: #8e9db2;
-                }
-            
-                .readtime{
-                    display: flex;
-                    font-size: 18px;
-                    color: #8e9db2;
-                    font-family: 'raleway-light';
-                    img{
-                        width: 30px;
-                        height: 30px;
-                        margin: auto;
-                        margin-right: 8px;
-                    }
-                }
-                
-            
+            }
+
+
         }
-        .content{
+
+        .content {
             font-size: 20px;
             font-family: 'raleway';
-            color:white;
+            color: white;
             justify-content: center;
             line-height: 1.8;
         }
-        .written-by{
-            .title{
-                font-size: 18px;
-                font-family: 'raleway';
-                text-align: left;
-                color: #8e9db2;
-            }
-            img{
-                width: 54px;
-                height: 54px;
-                border-radius: 50%;
-            }
-            .logo3{
-                display: flex;
-                .name{
+
+
+    }
+
+    .written-by {
+        margin-top: 40px;
+        padding-left: 160px;
+
+        .title {
+            font-size: 18px;
+            font-family: 'raleway';
+            text-align: left;
+            color: #8e9db2;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+        }
+
+        .logo3 {
+            display: flex;
+
+            margin-top: 10px;
+
+            .name-about {
+                margin-top: 10px;
+                margin-left: 15px;
+
+                .name {
                     color: white;
-                    margin: auto;
-                    margin-left: 15px;
+                    margin: 0;
+
+                }
+
+                .about {
+                    color: #8e9db2;
                 }
             }
         }
+    }
+
+    .interaction {
+        width: 241px;
+        height: 48px;
+        
+        
+        margin: auto;
+        margin-top: 30px;
+        padding: 0px;
+    
+
+    .interaction-content {
+        width: 241px;
+        height: 48px;
+        margin: auto;
+        justify-items: center;
+        border-radius: 10%;
+        background-color: #334155;
+        img {
+            width: 25px;
+            height: 25px;
+            margin: 12px;
+            margin-left: 16px;
+            margin-right: 16px;
+            
+
+        }
+    }
     }
 
 }

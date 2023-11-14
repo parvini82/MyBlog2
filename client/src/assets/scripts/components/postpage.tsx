@@ -1,5 +1,9 @@
 import logo from '../../images/logo2.png';
 import bookicon from '../../images/bookicon.png'
+import like from '../../images/icons8-like-50.png'
+import comment from '../../images/icons8-comment-48.png'
+import bookmark from '../../images/icons8-bookmark-48 (2).png'
+import share from '../../images/icons8-share-24.png'
 
 type PostProps = {
   postId: number;
@@ -40,18 +44,28 @@ function PostPage(props: PostProps) {
           XTS (XEX-based Tweaked-codebook mode with Ciphertext Stealing): This mode is designed for disk encryption and encrypts each sector of data with a different key derived from the original key and the sector number. It provides confidentiality and preserves the length of the plaintext. It also allows random access to the ciphertext¹³.
           OCB (Offset Codebook): This mode is another authenticated encryption mode that combines a tweakable block cipher with a MAC. It provides confidentiality, integrity and authentication, and has high efficiency and low overhead. However, it is patented and may require a license to use¹⁴.
         </div>
-        <div className='written-by'>
+        
+      </div>
+      <div className='interaction'>
+        <div className='interaction-content'>
+          <img src={like}></img>
+          <img src={comment}></img>
+          <img src={bookmark}></img>
+          <img src={share} />
+        </div>
+      </div>
+      <div className='written-by'>
           <p className='title'>Written by</p>
-          <div className='body'>
-            <div className='logo3'>
-              <img src={logo}></img>
+
+          <div className='logo3'>
+            <img src={logo}></img>
+            <div className='name-about'>
               <p className='name'>Mohammad Hosein Parvini</p>
               <p className='about'>Student at K. N. Toosi University of Technology</p>
             </div>
 
           </div>
         </div>
-      </div>
     </div>
   );
 }
