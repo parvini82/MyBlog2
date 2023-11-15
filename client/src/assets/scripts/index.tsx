@@ -16,23 +16,42 @@ interface PostData {
 	ReadTime: string;
 	ImgSrc: string;
 	ImgAlt: string;
-	PostId: string;
+	Content: string;
+	PostId: number;
 }
 
 function App() {
+	const [posts, setPosts] = useState<PostData[]>([]);
+	console.log(posts);
+	
+	useEffect(() => {
+		fetch('http://localhost:8000/api/posts')
+			.then((response) => response.json())
+			.then((data) => {
+				setPosts(data);
+			})
+			.catch((error) => {
+				console.error('Error fetching posts:', error);
+			});
+	}, []);
 	return (
-
-
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/post/1" element={<PostPage postId={1} />} />
-				<Route path="/post/2" element={<PostPage postId={2} />} />
-				<Route path="/post/3" element={<PostPage postId={3} />} />
-			</Routes>
+		  <Routes>
+	
+			<Route path="/" element={<Home />} />
+	
+		
+			{posts.map((post) => (
+			  <Route
+				
+				path={`/post/${post.PostId}`}
+				element={<PostPage PostId={post.PostId} Title={post.Title} Date={post.Date} ReadTime={post.ReadTime} Content={post.Content}/>}
+			  />
+			))}
+		  </Routes>
 		</BrowserRouter>
-	);
-}
+	  );
+	}
 
 export default App;
 const currentUrl = window.location.href;
@@ -67,7 +86,7 @@ function Posts() {
 			<div>
 				{posts.map((post) => (
 					
-					
+					<a href={`/post/${post.PostId}`}>
 					<Post
 						title={post.Title}
 						description={post.Description}
@@ -77,6 +96,7 @@ function Posts() {
 						imageAlt={post.ImgAlt}
 						postId={post.PostId}
 					/>
+					</a>
 				))}
 				<Outlet />
 			</div>

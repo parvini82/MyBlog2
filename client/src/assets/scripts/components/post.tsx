@@ -8,7 +8,8 @@ type PostProps = {
   readTime: string;
   imageSrc: string;
   imageAlt: string;
-  postId: string;
+  postId: number;
+
 };
 
 function Post(props: PostProps) {
