@@ -46,7 +46,7 @@ function PostPage(props: PostProps) {
         </ReactMarkdown>
         
       </div>
-      <div className='interaction'>
+      <div className='interaction-floating-bar'>
         <div className='interaction-content'>
           <img src={like}></img>
           <img src={comment}></img>

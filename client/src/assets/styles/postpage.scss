@@ -13,6 +13,7 @@
 }
 
 .post-page {
+    position: relative;
     .header {
         height: 80px;
         display: flex;
@@ -150,35 +151,27 @@
         }
     }
 
-    .interaction {
-        width: 241px;
-        height: 48px;
+    .interaction-floating-bar {
         position: fixed;
-        border-radius: 5px;
-        cursor: pointer;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 20px;
+        align-items: center;
+        display: flex;
         
-        margin: auto;
-        margin-top: 30px;
-        padding: 0px;
-    
-
-    .interaction-content {
-        width: 241px;
-        height: 48px;
-        margin: auto;
-        justify-items: center;
-        border-radius: 10%;
         background-color: #334155;
-        img {
-            width: 25px;
-            height: 25px;
-            margin: 12px;
-            margin-left: 16px;
-            margin-right: 16px;
+      
+      .interaction-content {
+        display: flex;
+        img{
+            width: 36px;
+            height: 36px;
+            padding: 8px;
             
-
         }
-    }
+        
+      }
     }
 
 }
