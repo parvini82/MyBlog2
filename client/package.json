@@ -4,6 +4,7 @@
     "author": "mohammad hosein parvini",
     "description": "a personal blog",
     "license": "MIT",
+    "proxy": "http://localhost:8000",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
@@ -30,4 +31,5 @@
         "@types/node": "^20.9.0",
         "react": "^18.2.0"
     }
+    
 }

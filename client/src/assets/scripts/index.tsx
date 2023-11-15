@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom';
 import Home from './components/home';
 import Footer from "./components/footer";
@@ -9,6 +9,15 @@ import '../styles/index.scss'
 import '../styles/post.scss'
 import '../styles/postpage.scss'
 
+interface PostData {
+	Title: string;
+	Description: string;
+	Date: string;
+	ReadTime: string;
+	ImgSrc: string;
+	ImgAlt: string;
+	PostId: string;
+}
 
 function App() {
 	return (
@@ -30,7 +39,7 @@ const currentUrl = window.location.href;
 
 ReactDOM.createRoot(document.getElementById('content')!).render(
 	<App></App>
-	
+
 
 )
 ReactDOM.createRoot(document.getElementById('footer')!).render(
@@ -38,38 +47,54 @@ ReactDOM.createRoot(document.getElementById('footer')!).render(
 
 
 )
+function Posts() {
+	const [posts, setPosts] = useState<PostData[]>([]);
+	console.log(posts);
+	
+	useEffect(() => {
+		fetch('http://localhost:8000/api/posts')
+			.then((response) => response.json())
+			.then((data) => {
+				setPosts(data);
+			})
+			.catch((error) => {
+				console.error('Error fetching posts:', error);
+			});
+	}, []);
 
-if (currentUrl.split("/")[3] != 'post') {
-	ReactDOM.createRoot(document.getElementById('posts')!).render(
-		<div>
-			<Post
-				title='Java'
-				description='Java is a widely-used programming language for coding web applications. It has been a popular choice among developers for over two decades, with millions of Java applications in use today.'
-				date='Sep 24, 2023'
-				readTime='3 min read'
-				imageSrc='./assets/images/Java.png'
-				imageAlt='image'
-				postId="1"
-			/>
-			<Post
-				title='Python'
-				description='Python can be easy to pick up whether youre a first-time programmer or youre experienced with other languages. The following pages are a useful first step to get on your way writing programs with Python!'
-				date='Sep 24, 2023'
-				readTime='3 min read'
-				imageSrc='./assets/images/Java.png'
-				imageAlt='image'
-				postId="2"
-			/>
-			<Post
-				title='JavaScript'
-				description='JavaScript is a high-level, versatile, and widely-used programming language primarily used for adding interactivity and dynamic behavior to websites. It is one of the core technologies for building web applications and is supported by all modern web browsers, making it a fundamental part of web development.'
-				date='Sep 24, 2023'
-				readTime='3 min read'
-				imageSrc='./assets/images/Java.png'
-				imageAlt='image'
-				postId="3"
-			/>
-			<Outlet />
-		</div>
-	);
+	if (currentUrl.split("/")[3] != 'post') {
+		return (
+			<div>
+				{posts.map((post) => (
+					
+					
+					<Post
+						title={post.Title}
+						description={post.Description}
+						date={formatDate(post.Date)}
+						readTime={post.ReadTime+' min read'}
+						imageSrc={post.ImgSrc}
+						imageAlt={post.ImgAlt}
+						postId={post.PostId}
+					/>
+				))}
+				<Outlet />
+			</div>
+		);
+	}
+	function formatDate(dateString: string): string {
+		const options: Intl.DateTimeFormatOptions = {
+			month: 'short',
+			day: 'numeric',
+			year: 'numeric',
+		  };
+		  return new Date(dateString).toLocaleDateString('en-US', options)
+	  }
+
+
 }
+ReactDOM.createRoot(document.getElementById('posts')!).render(
+	<Posts />
+
+
+)
