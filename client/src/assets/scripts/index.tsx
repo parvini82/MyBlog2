@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom/client";
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, Outlet, Link } from 'react-router-dom';
-import Home from './components/home';
+import Home from './pages/home';
 import Footer from "./components/footer";
 import Post from "./components/post";
-import PostPage from "./components/postpage";
+import PostPage from "./pages/postpage";
 import '../styles/index.scss'
 import '../styles/post.scss'
 import '../styles/postpage.scss'

@@ -1,17 +1,20 @@
 {
-    "name": "MyBlog",
-    "author": "Mphammad Hosein Parvini",
-    "version": "2.0.0",
+    "name": "my-blog",
+    "author": "Mohammad Hosein Parvini",
+    "version": "0.0.1",
     "type": "module",
     "dependencies": {
         "@koa/cors": "^4.0.0",
-        "@types/node": "^20.9.0",
-        "express": "^4.18.2",
         "koa": "^2.14.2",
         "koa-bodyparser": "^4.4.1",
-        "mariadb": "^3.2.2",
-        "mysql": "^2.18.1",
-        "mysql2": "^3.6.3",
-        "node": "^21.1.0"
+        "koa-router": "^12.0.1",
+        "mysql2": "^3.6.3"
+    },
+    "devDependencies": {
+        "@types/koa": "^2.13.11",
+        "@types/koa__cors": "^4.0.3",
+        "@types/koa-router": "^7.4.7",
+        "@types/node": "^20.9.0",
+        "typescript": "^5.2.2"
     }
 }
