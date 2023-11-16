@@ -2,19 +2,22 @@ import Koa from "koa";
 import Router from "koa-router";
 import mysql from "mysql2/promise";
 import cors from "@koa/cors";
+import dotenv from "dotenv";
 
 const app = new Koa();
 const router = new Router();
 
+dotenv.config();
+
 // Use the CORS middleware
 app.use(cors());
-
 // Database connection configuration
 const connectionConfig: mysql.PoolOptions = {
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "myblog",
+  
+  host: process.env.DB_HOST ,
+  user: process.env.DB_USER ,
+  password: process.env.DB_PASSWORD ,
+  database: process.env.DB_DATABASE ,
 };
 
 // API endpoint to fetch posts

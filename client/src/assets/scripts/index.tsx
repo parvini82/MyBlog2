@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom'
-import React from "react"
+import React from 'react'
 import Home from './pages/home'
 import Footer from './components/footer'
 import Post from './components/post'
