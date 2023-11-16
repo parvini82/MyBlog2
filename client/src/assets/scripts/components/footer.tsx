@@ -1,6 +1,4 @@
-
-
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <footer className="footer">
       <p>&copy; 2023 MyBlog - Developed by Mohammad Hosein Parvini</p>
