@@ -10,6 +10,7 @@ import '../styles/index.scss'
 import '../styles/post.scss'
 import '../styles/postpage.scss'
 
+
 interface PostData {
     Title: string
     Description: string

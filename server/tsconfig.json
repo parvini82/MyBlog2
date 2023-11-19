@@ -11,8 +11,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "allowImportingTsExtensions": false,
-    "noEmit": false,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "declaration": true,
     "strict": true,
     "baseUrl": "./api"

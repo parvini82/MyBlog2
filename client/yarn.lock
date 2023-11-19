@@ -522,6 +522,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/mocha@^10.0.4":
+  version "10.0.4"
+  resolved "https://registry.npmjs.org/@types/mocha/-/mocha-10.0.4.tgz"
+  integrity sha512-xKU7bUjiFTIttpWaIZ9qvgg+22O1nmbA+HRxdlR+u6TWsGfmFdXrheJoK4fFxrHNVIOBDvDNKZG+LYBpMHpX3w==
+
 "@types/ms@*":
   version "0.7.34"
   resolved "https://registry.npmjs.org/@types/ms/-/ms-0.7.34.tgz"
@@ -2164,6 +2169,11 @@ keyv@^4.5.3:
   integrity sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==
   dependencies:
     json-buffer "3.0.1"
+
+kysely@^0.26.3:
+  version "0.26.3"
+  resolved "https://registry.npmjs.org/kysely/-/kysely-0.26.3.tgz"
+  integrity sha512-yWSgGi9bY13b/W06DD2OCDDHQmq1kwTGYlQ4wpZkMOJqMGCstVCFIvxCCVG4KfY1/3G0MhDAcZsip/Lw8/vJWw==
 
 levn@^0.4.1:
   version "0.4.1"
