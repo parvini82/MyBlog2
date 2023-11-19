@@ -9,6 +9,7 @@ import PostPage from "./pages/postpage";
 import "../styles/index.scss";
 import "../styles/post.scss";
 import "../styles/postpage.scss";
+import Login from "./pages/Login";
 
 interface PostData {
 	Title: string;
@@ -38,7 +39,8 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/home" element={<Home />} />
+				<Route path="/admin/login" element={<Login />} />
 
 				{posts.map((post) => (
 					<Route
@@ -80,7 +82,7 @@ function Posts() {
 			});
 	}, []);
 
-	if (currentUrl.split("/")[3] != "post") {
+	if (currentUrl.split("/")[3] == "home") {
 		return (
 			<div>
 				{posts.map((post) => (
@@ -110,4 +112,5 @@ function Posts() {
 		return new Date(dateString).toLocaleDateString("en-US", options);
 	}
 }
+
 ReactDOM.createRoot(document.getElementById("posts")!).render(<Posts />);
