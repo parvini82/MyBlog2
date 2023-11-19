@@ -1,11 +1,7 @@
-import React from 'react'
-
-function Footer(): JSX.Element {
-    return (
-        <footer className="footer">
-            <p>&copy; 2023 MyBlog - Developed by Mohammad Hosein Parvini</p>
-        </footer>
-    )
+export default function Footer(): JSX.Element {
+	return (
+		<footer className="footer">
+			<p>&copy; 2023 MyBlog - Developed by Mohammad Hosein Parvini</p>
+		</footer>
+	);
 }
-
-export default Footer
