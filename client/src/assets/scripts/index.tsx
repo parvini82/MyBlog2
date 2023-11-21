@@ -9,6 +9,7 @@ import PostPage from "./pages/postpage";
 import "../styles/index.scss";
 import "../styles/post.scss";
 import "../styles/postpage.scss";
+import "../styles/Login.scss"
 import Login from "./pages/Login";
 
 interface PostData {
