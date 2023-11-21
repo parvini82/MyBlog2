@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 // import { sql } from 'kysely'
 // import { db } from './database'
 import * as PersonRepository from "./PostRepository";
+import * as UserRepository from "./UserRespository";
 
 const app = new Koa();
 const router = new Router();
@@ -32,6 +33,17 @@ router.get("/api/posts", async (ctx: Koa.Context) => {
 		ctx.body = Posts;
 	} catch (error) {
 		console.error("Error fetching posts:", (error as Error)?.message);
+		ctx.status = 500;
+		ctx.body = { error: "Internal Server Error" };
+	}
+});
+router.get("/api/users", async (ctx: Koa.Context) => {
+	try {
+		const users= UserRepository.getAllUsers;
+		ctx.body(users);
+
+	} catch (error) {
+		console.error("Error fetching users:", (error as Error)?.message);
 		ctx.status = 500;
 		ctx.body = { error: "Internal Server Error" };
 	}
