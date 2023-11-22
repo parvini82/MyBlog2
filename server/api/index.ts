@@ -32,7 +32,7 @@ router.get("/api/posts", async (ctx: Koa.Context) => {
 		// const [rows] = await connection.execute("SELECT * FROM Posts");
 		ctx.body = Posts;
 	} catch (error) {
-		console.error("Error fetching posts:", (error as Error)?.message);
+		console.error("Error fetching posts123132:", (error as Error)?.message);
 		ctx.status = 500;
 		ctx.body = { error: "Internal Server Error" };
 	}
@@ -40,7 +40,8 @@ router.get("/api/posts", async (ctx: Koa.Context) => {
 router.get("/api/users", async (ctx: Koa.Context) => {
 	try {
 		const users= UserRepository.getAllUsers;
-		ctx.body(users);
+		console.log('hi '+users);
+		ctx.body=users;
 
 	} catch (error) {
 		console.error("Error fetching users:", (error as Error)?.message);
