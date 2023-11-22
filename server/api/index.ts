@@ -36,6 +36,7 @@ router.get("/api/posts", async (ctx: Koa.Context) => {
 		ctx.body = { error: "Internal Server Error" };
 	}
 });
+<<<<<<< HEAD
 router.get("/api/users", async (ctx: Koa.Context) => {
 	try {
 		const users= UserRepository.getAllUsers;
@@ -48,6 +49,8 @@ router.get("/api/users", async (ctx: Koa.Context) => {
 		ctx.body = { error: "Internal Server Error" };
 	}
 });
+=======
+>>>>>>> parent of 7ad7cb4 (tried to get users from database)
 
 app.use(router.routes());
 app.use(router.allowedMethods());
