@@ -37,7 +37,6 @@
 		"babel-plugin-macros": "^3.1.0",
 		"eslint": "^8.54.0",
 		"kysely": "^0.26.3",
-		"modern-normalize": "^2.0.0",
 		"react-dom": "^18.2.0",
 		"react-markdown": "^9.0.1",
 		"react-router-dom": "^6.18.0",
