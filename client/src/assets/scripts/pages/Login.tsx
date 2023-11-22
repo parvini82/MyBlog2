@@ -1,6 +1,5 @@
 import React from "react"
 import LoginImg from '../../images/account.png'
-
 export default function Login() {
 	return (
 		<>
@@ -23,7 +22,7 @@ export default function Login() {
 							<a href="#!">Forgot password?</a>
 						</p>
 
-						<button type="submit" className="loginButton" onClick={loginButtonClicked}>Login</button>
+						<button type="submit" className="loginButton">Login</button>
 
 						<div>
 							<a href="#!">
@@ -41,7 +40,4 @@ export default function Login() {
 			</section>
 		</>
 	);
-}
-function loginButtonClicked(){
-
 }

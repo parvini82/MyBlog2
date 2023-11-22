@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 // import { sql } from 'kysely'
 // import { db } from './database'
 import * as PersonRepository from "./PostRepository";
-import * as UserRepository from "./UserRespository";
 
 const app = new Koa();
 const router = new Router();
