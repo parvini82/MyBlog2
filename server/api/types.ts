@@ -1,7 +1,8 @@
 import { Generated, Insertable, Selectable, Updateable } from "kysely";
 
 export interface Database {
-	post: Posts;
+	posts: Posts;
+	users:Users;
 }
 export interface Posts {
 	PostId: Generated<number>;
@@ -19,6 +20,12 @@ export interface Posts {
 	// // a `Date`, can optionally be provided as a `string` in inserts and
 	// // can never be updated:
 	// created_at: ColumnType<Date, string | undefined, never>
+}
+export interface Users{
+	UserId:number;
+	Email:string;
+	Password:string;
+	AccessLevel:number;
 }
 export type Post = Selectable<Posts>;
 export type NewPost = Insertable<Posts>;

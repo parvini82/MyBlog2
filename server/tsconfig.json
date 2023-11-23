@@ -17,6 +17,6 @@
     "strict": true,
     "baseUrl": "./api"
   },
-  "include": ["api/**/*", "vite.config.ts", "*.cjs", "api/UserRespository.ts", "api/types.ts", "api/PostRepository.ts", "api/index.ts", "api/database.ts"],
+  "include": ["./api/**/*", "vite.config.ts", "*.cjs"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

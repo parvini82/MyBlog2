@@ -1,11 +1,12 @@
 import Koa from "koa";
 import Router from "koa-router";
-// import mysql from "mysql2/promise";
+import mysql from "mysql2/promise";
 import cors from "@koa/cors";
 import dotenv from "dotenv";
-// import { sql } from 'kysely'
-// import { db } from './database'
-import * as PersonRepository from "./PostRepository";
+import { sql } from 'kysely'
+import { db } from './database'
+import * as PostRepository from "./PostRepository";
+import * as UserRepository from "./UserRepository"
 
 const app = new Koa();
 const router = new Router();
@@ -15,32 +16,43 @@ dotenv.config();
 // Use the CORS middleware
 app.use(cors());
 // Database connection configuration
-// const connectionConfig: mysql.PoolOptions = {
+/* const connectionConfig: mysql.PoolOptions = {
 
-//   host: process.env.DB_HOST ,
-//   user: process.env.DB_USER ,
-//   password: process.env.DB_PASSWORD ,
-//   database: process.env.DB_DATABASE ,
-// };
+  host: process.env.DB_HOST ,
+  user: process.env.DB_USER ,
+  password: process.env.DB_PASSWORD ,
+  database: process.env.DB_DATABASE ,
+}; */
+
 
 // API endpoint to fetch posts
 router.get("/api/posts", async (ctx: Koa.Context) => {
 	try {
 		// const connection = await mysql.createPool(connectionConfig);
-		const Posts = PersonRepository.getAllPosts;
+		const Posts = await PostRepository.getAllPosts();
 		// const [rows] = await connection.execute("SELECT * FROM Posts");
 		ctx.body = Posts;
 	} catch (error) {
-		console.error("Error fetching posts123132:", (error as Error)?.message);
+		console.error("Error fetching posts:", (error as Error)?.message);
 		ctx.status = 500;
 		ctx.body = { error: "Internal Server Error" };
 	}
 });
-<<<<<<< HEAD
+/* router.get("/api/users", async (ctx: Koa.Context) => {
+	try {
+		const connection = await mysql.createPool(connectionConfig);
+		// const Posts = PostRepository.getAllPosts();
+		const [rows] = await connection.execute("SELECT * FROM users");
+		ctx.body = rows;
+	} catch (error) {
+		console.error("Error fetching posts:", (error as Error)?.message);
+		ctx.status = 500;
+		ctx.body = { error: "Internal Server Error" };
+	}
+}); */
 router.get("/api/users", async (ctx: Koa.Context) => {
 	try {
-		const users= UserRepository.getAllUsers;
-		console.log('hi '+users);
+		const users=await UserRepository.getAllUsers();
 		ctx.body=users;
 
 	} catch (error) {
@@ -49,11 +61,10 @@ router.get("/api/users", async (ctx: Koa.Context) => {
 		ctx.body = { error: "Internal Server Error" };
 	}
 });
-=======
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+
+app.use(router.routes())
+	.use(router.allowedMethods());
 
 const port = 8000;
 app.listen(port, () => {

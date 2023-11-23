@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
-import React from "react";
 import Home from "./pages/home";
 import Footer from "./components/footer";
 import Post from "./components/post";
@@ -9,8 +8,9 @@ import PostPage from "./pages/postpage";
 import "../styles/index.scss";
 import "../styles/post.scss";
 import "../styles/postpage.scss";
-import "../styles/Login.scss"
+import "../styles/Login.scss";
 import Login from "./pages/Login";
+import Panel from "./pages/Panel";
 
 interface PostData {
 	Title: string;
@@ -42,6 +42,7 @@ function App() {
 			<Routes>
 				<Route path="/home" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
+				<Route path="/admin/panel" element={<Panel />} />
 
 				{posts.map((post) => (
 					<Route

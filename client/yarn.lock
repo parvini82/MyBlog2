@@ -847,6 +847,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/crypto-js@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "@types/crypto-js@npm:4.2.1"
+  checksum: 413a3de36ff916fd796aac6069dc4afba26c3add11c2570eff43f98eb86e34ed8fa2693636743d13685f038f9d3a21e3327b33e3a06c3cb332be5ca64b802925
+  languageName: node
+  linkType: hard
+
 "@types/debug@npm:^4.0.0":
   version: 4.1.12
   resolution: "@types/debug@npm:4.1.12"
@@ -968,35 +975,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
 "@types/react@npm:*, @types/react@npm:^18.2.37":
   version: 18.2.38
   resolution: "@types/react@npm:18.2.38"
-=======
-"@types/react@npm:*":
-  version: 18.2.33
-  resolution: "@types/react@npm:18.2.33"
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-<<<<<<< HEAD
   checksum: 9f9b9925c979e848d572dce6fff34951708127ba6b1fd4306c93fbcab74f5c6cff2b2e47d4222339eeb6c19d264e93450cb2ad6b255c73c536d0a1e2093cc98a
-=======
-  checksum: 7f84dcf70eed3644973c7a47a63669d9e9ecc8d15b331fb272940a5c7cc322df11995eeeae1edfab5c278083cc3527477aa682c79f26667cfe8cd74481621884
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.2.37":
-  version: 18.2.37
-  resolution: "@types/react@npm:18.2.37"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: fab3a5960e710aad6c16ffe57f48a470c6bbbe9e6363f70accf114191ea3192a204e33b5657324f14e64b2095986327db6b728fc15156e05f7d30b6dca0d66a3
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
   languageName: node
   linkType: hard
 
@@ -1165,49 +1151,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-=======
-"MyBlog@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "MyBlog@workspace:."
-  dependencies:
-    "@babel/core": "npm:^7.23.2"
-    "@babel/preset-flow": "npm:^7.22.15"
-    "@babel/preset-react": "npm:^7.22.15"
-    "@fortawesome/fontawesome-free": "npm:^6.4.2"
-    "@fortawesome/fontawesome-svg-core": "npm:^6.4.2"
-    "@fortawesome/react-fontawesome": "npm:^0.2.0"
-    "@types/eslint": "npm:^8"
-    "@types/mocha": "npm:^10.0.4"
-    "@types/node": "npm:^20.9.0"
-    "@types/react": "npm:^18.2.37"
-    "@types/react-dom": "npm:^18.2.14"
-    "@types/react-router": "npm:^5.1.20"
-    "@typescript-eslint/eslint-plugin": "npm:^6.11.0"
-    "@typescript-eslint/parser": "npm:^6.11.0"
-    "@vitejs/plugin-react": "npm:^4.1.0"
-    babel-plugin-macros: "npm:^3.1.0"
-    eslint: "npm:^8.54.0"
-    eslint-config-prettier: "npm:^9.0.0"
-    eslint-config-standard-with-typescript: "npm:^39.1.1"
-    eslint-plugin-import: "npm:^2.29.0"
-    eslint-plugin-n: "npm:^16.3.1"
-    eslint-plugin-prettier: "npm:^5.0.1"
-    eslint-plugin-promise: "npm:^6.1.1"
-    eslint-plugin-react: "npm:^7.33.2"
-    kysely: "npm:^0.26.3"
-    prettier: "npm:3.1.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-markdown: "npm:^9.0.1"
-    react-router-dom: "npm:^6.18.0"
-    sass: "npm:^1.69.5"
-    typescript: "npm:^5.2.2"
-    vite: "npm:^4.5.0"
-  languageName: unknown
-  linkType: soft
-
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
 "abbrev@npm:^2.0.0":
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
@@ -1726,6 +1669,13 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: e1a13869d2f57d974de0d9ef7acbf69dc6937db20b918525a01dacb5032129bd552d290d886d981e99f1b624cb03657084cc87bd40f115c07ecf376821c729ce
+  languageName: node
+  linkType: hard
+
+"crypto-js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: c7bcc56a6e01c3c397e95aa4a74e4241321f04677f9a618a8f48a63b5781617248afb9adb0629824792e7ec20ca0d4241a49b6b2938ae6f973ec4efc5c53c924
   languageName: node
   linkType: hard
 
@@ -3528,9 +3478,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
-  version: 10.0.3
-  resolution: "lru-cache@npm:10.0.3"
-  checksum: 2fd14d8f828760eb4f1e696d20383bf52bb58a02aebfd08cb8035a66876c6fc1ec244ffdcf93d5a201fdad6d9f8c59de62c4fc5ff5604d67a4f833441f5b5945
+  version: 10.1.0
+  resolution: "lru-cache@npm:10.1.0"
+  checksum: 207278d6fa711fb1f94a0835d4d4737441d2475302482a14785b10515e4c906a57ebf9f35bf060740c9560e91c7c1ad5a04fd7ed030972a9ba18bce2a228e95b
   languageName: node
   linkType: hard
 
@@ -4008,16 +3958,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"modern-normalize@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "modern-normalize@npm:2.0.0"
-  checksum: 866690696e1989c57416e7d9c589910bbd02221fb1b2bac0ea735e5a22e0525e9bec67269571c3eaa0de879938d5447c88dc0749675b349c61d6753038730330
-  languageName: node
-  linkType: hard
-
-=======
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
 "ms@npm:2.1.2, ms@npm:^2.1.1":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -4025,7 +3965,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
 "myblog@workspace:.":
   version: 0.0.0-use.local
   resolution: "myblog@workspace:."
@@ -4036,6 +3975,7 @@ __metadata:
     "@fortawesome/fontawesome-free": "npm:^6.4.2"
     "@fortawesome/fontawesome-svg-core": "npm:^6.4.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
+    "@types/crypto-js": "npm:^4.2.1"
     "@types/eslint": "npm:^8"
     "@types/mocha": "npm:^10.0.4"
     "@types/node": "npm:^20.9.0"
@@ -4046,6 +3986,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^6.11.0"
     "@vitejs/plugin-react": "npm:^4.1.0"
     babel-plugin-macros: "npm:^3.1.0"
+    crypto-js: "npm:^4.2.0"
     eslint: "npm:^8.54.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-config-standard-with-typescript: "npm:^39.1.1"
@@ -4055,7 +3996,6 @@ __metadata:
     eslint-plugin-promise: "npm:^6.1.1"
     eslint-plugin-react: "npm:^7.33.2"
     kysely: "npm:^0.26.3"
-    modern-normalize: "npm:^2.0.0"
     prettier: "npm:3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -4067,8 +4007,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-=======
->>>>>>> parent of 7ad7cb4 (tried to get users from database)
 "nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"

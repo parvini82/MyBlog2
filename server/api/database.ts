@@ -10,10 +10,20 @@ const dialect = new MysqlDialect({
 		user: process.env.DB_USER,
 		password: process.env.DB_PASSWORD,
 		database: process.env.DB_DATABASE,
-		port: 3308,
-		connectionLimit: 10,
 	}),
 });
+// const dialect = new MysqlDialect({
+// 	pool: createPool({
+// 		host: "localhost",
+// 		user: "root",
+// 		password: "",
+// 		database: "myblog",
+// 		port: 3308,
+// 		connectionLimit: 10,
+// 	}),
+// });
+console.log(dialect);
 export const db = new Kysely<Database>({
 	dialect,
 });
+console.log(db);
