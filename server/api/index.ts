@@ -52,8 +52,8 @@ router.get("/api/posts", async (ctx: Koa.Context) => {
 }); */
 router.get("/api/users", async (ctx: Koa.Context) => {
 	try {
-		const users=await UserRepository.getAllUsers();
-		ctx.body=users;
+		const users = await UserRepository.getAllUsers();
+		ctx.body = users;
 
 	} catch (error) {
 		console.error("Error fetching users:", (error as Error)?.message);

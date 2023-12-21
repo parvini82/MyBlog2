@@ -1,9 +1,9 @@
-import logo from "../../images/logo2.png";
 import bookicon from "../../images/bookicon.png";
 import like from "../../images/icons8-like-50.png";
 import comment from "../../images/icons8-comment-48.png";
 import bookmark from "../../images/icons8-bookmark-48 (2).png";
 import share from "../../images/icons8-share-24.png";
+import logo from "../../images/logo2.jpg"
 import ReactMarkdown from "react-markdown";
 
 interface PostProps {

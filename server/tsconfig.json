@@ -17,6 +17,13 @@
     "strict": true,
     "baseUrl": "./api"
   },
-  "include": ["./api/**/*", "vite.config.ts", "*.cjs"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": [
+    "./api/**/*",
+    "vite.config.ts",
+    "*.cjs"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }

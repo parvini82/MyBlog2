@@ -48,7 +48,8 @@
 		"koa-bodyparser": "^4.4.1",
 		"koa-router": "^12.0.1",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"yarn": "^1.22.21"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^6.11.0",
