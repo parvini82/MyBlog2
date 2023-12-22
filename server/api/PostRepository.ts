@@ -43,7 +43,7 @@ export async function updatePost(id: number, updateWith: PostUpdate) {
 	await db.updateTable("posts").set(updateWith).where("PostId", "=", id).execute();
 }
 export async function getAllPosts() {
-	console.log("hi");
+	//console.log("hi");
 	const rows = await db.selectFrom("posts").selectAll().execute();
 	return rows;
 }

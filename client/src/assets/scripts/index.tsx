@@ -40,7 +40,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/home" element={<Home />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
 				<Route path="/admin/panel" element={<Panel />} />
 
@@ -84,7 +84,7 @@ function Posts() {
 			});
 	}, []);
 
-	if (currentUrl.split("/")[3] == "home") {
+	if (currentUrl.split("/")[3] == "") {
 		return (
 			<div>
 				{posts.map((post) => (

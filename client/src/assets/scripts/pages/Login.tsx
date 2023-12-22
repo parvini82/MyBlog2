@@ -1,4 +1,5 @@
 import LoginImg from "../../images/account.png";
+import warning from "../../images/warning.png"
 import { useEffect, useState } from "react";
 import { MD5 } from 'crypto-js';
 
@@ -9,25 +10,25 @@ interface UserData {
 	AccessLevel: string;
 }
 
-function loginClicked(users: UserData[], enteredEmail: string, enteredPassword: string) {
-	// console.log(users);
-	// console.log(enteredEmail);
+function loginClicked(users: UserData[], enteredEmail: string, enteredPassword: string, setError: (error: boolean) => void) {
 	for (const user of users) {
-	  if(user.Email.toLowerCase()==enteredEmail.toLowerCase()){
-		if(MD5(enteredPassword).toString()==user.Password){
-			console.log("Login!");
-		}else{
-			console.log("wrong");
+		if (user.Email.toLowerCase() == enteredEmail.toLowerCase()) {
+			if (MD5(enteredPassword).toString() == user.Password) {
+				window.location.href = "/admin/panel";
+				return;
+			} else {
+				setError(true);
+			}
 		}
-	  }
 	}
-	console.log("wrong");
+	setError(true);
 }
 
 export default function Login() {
 	const [users, setUsers] = useState<UserData[]>([]);
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
+	const [error, setError] = useState<boolean>(false);
 
 	const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setEmail(event.target.value);
@@ -37,7 +38,7 @@ export default function Login() {
 		setPassword(event.target.value);
 	};
 	const handleLoginClick = () => {
-		loginClicked(users, email, password);
+		loginClicked(users, email, password, setError);
 	};
 
 	useEffect(() => {
@@ -66,6 +67,13 @@ export default function Login() {
 						<div className="passwordInput">
 							<input placeholder="Password" type="password" value={password} onChange={handlePasswordChange} />
 						</div>
+
+						{error && (
+							<div className="error" style={{display: 'flex'}}>
+								<img src={warning}></img>
+								<p>Password or Email is not correct!</p>
+							</div>
+						)}
 
 						<button type="submit" className="loginButton" onClick={handleLoginClick}>
 							Login
