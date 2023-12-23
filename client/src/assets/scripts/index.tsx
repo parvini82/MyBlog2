@@ -22,7 +22,16 @@ interface PostData {
 	Content: string;
 	PostId: number;
 }
-
+interface UserData {
+	UserId: string;
+	Email: string;
+	Password: string;
+	Firstname: string;
+	Lastname: string;
+	Description: string;
+	ImgUrl: string;
+	AccessLevel: number;
+}
 function App() {
 	const [posts, setPosts] = useState<PostData[]>([]);
 	console.log(posts);
@@ -37,12 +46,39 @@ function App() {
 				console.error("Error fetching posts:", error);
 			});
 	}, []);
+	const [Users, setUsers] = useState<UserData[]>([]);
+	console.log(Users);
+
+	useEffect(() => {
+		fetch("http://localhost:8000/api/users")
+			.then(async (response) => await response.json())
+			.then((data) => {
+				setUsers(data);
+			})
+			.catch((error) => {
+				console.error("Error fetching Users:", error);
+			});
+	}, []);
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
-				<Route path="/admin/panel" element={<Panel />} />
+				{Users.map((users) => (
+					<Route
+						key={users.UserId}
+						path={`/admin/panel`}
+						element={
+							<Panel
+								Firstname={users.Firstname}
+								Lastname={users.Lastname}
+								Description={users.Description}
+								ImgUrl={users.ImgUrl}
+								AccessLevel={users.AccessLevel}
+							/>
+						}
+					/>
+				))}
 
 				{posts.map((post) => (
 					<Route
@@ -71,7 +107,7 @@ ReactDOM.createRoot(document.getElementById("content")!).render(<App></App>);
 ReactDOM.createRoot(document.getElementById("footer")!).render(<Footer />);
 function Posts() {
 	const [posts, setPosts] = useState<PostData[]>([]);
-	console.log(posts);
+	//console.log(posts);
 
 	useEffect(() => {
 		fetch("http://localhost:8000/api/posts")
