@@ -1,6 +1,7 @@
 import "../../styles/Panel.scss";
 import logo from "../../images/logo2.jpg";
 import Post from "./../components/post";
+import MyForm from "../components/addpost";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 
@@ -74,6 +75,8 @@ export default function Panel(props: UserProps) {
 		setActiveLink(name);
 		if (name === "posts") {
 			setContent(<Posts />);
+		} else {
+			setContent(<MyForm />)
 		}
 	};
 
