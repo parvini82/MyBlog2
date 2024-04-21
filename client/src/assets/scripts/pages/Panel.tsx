@@ -50,7 +50,7 @@ function Posts() {
 			let element2 = document.getElementById(i.toString());
 			if(element2){
 			if(i == name){
-				element2.style.backgroundColor = 'red';
+				element2.style.backgroundColor = '#0d3554';
 			} else {
 				element2.style.backgroundColor = '';
 			}
@@ -64,6 +64,7 @@ function Posts() {
 	return (
 		<div >
 			{posts.map((post) => (
+				<div id={post.PostId.toString()}>
 				<a className="Post" key={post.PostId} onClick={handleClick2} id={post.PostId.toString()} data-name={post.PostId}>
 					<Post
 						key={post.PostId}
@@ -76,6 +77,8 @@ function Posts() {
 						postId={post.PostId}
 					/>
 				</a>
+				</div>
+				
 				
 				
 			))}
