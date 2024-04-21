@@ -36,11 +36,35 @@ function Posts() {
 				console.error("Error fetching posts:", error);
 			});
 	}, []);
+	const [activePost, setActivePost] = useState("");
+	//const [content, setContent] = useState(<></>);
 
+	const handleClick2 = (e: any) => {
+		const name = e.currentTarget.getAttribute('data-name');
+		setActivePost(name);
+		let element = document.getElementById('changeNavbar');
+		if (element) {
+    		element.style.display='block';
+		}
+		for(let i=0; i<posts.length; i++){
+			let element2 = document.getElementById(i.toString());
+			if(element2){
+			if(i == name){
+				element2.style.backgroundColor = 'red';
+			} else {
+				element2.style.backgroundColor = '';
+			}
+		}
+		}
+		
+	
+		
+		
+	};
 	return (
-		<div>
+		<div >
 			{posts.map((post) => (
-				<a href={`/post/${post.PostId}`} key={post.PostId}>
+				<a className="Post" key={post.PostId} onClick={handleClick2} id={post.PostId.toString()} data-name={post.PostId}>
 					<Post
 						key={post.PostId}
 						title={post.Title}
@@ -52,6 +76,8 @@ function Posts() {
 						postId={post.PostId}
 					/>
 				</a>
+				
+				
 			))}
 			<Outlet />
 		</div>
@@ -75,10 +101,13 @@ export default function Panel(props: UserProps) {
 		setActiveLink(name);
 		if (name === "posts") {
 			setContent(<Posts />);
-		} else {
+		} else if(name==="addPost") {
 			setContent(<MyForm />)
+		} else{
+			setContent(<></>);
 		}
 	};
+	
 
 	return (
 		<>
@@ -96,9 +125,9 @@ export default function Panel(props: UserProps) {
 						<li>
 							<a className={activeLink === "posts" ? "active" : ""} data-name="posts" onClick={handleClick}>Your Posts</a>
 						</li>
-						<li>
+						{/* <li>
 							<a className={activeLink === "addPost" ? "active" : ""} data-name="addPost" onClick={handleClick}>Add Post</a>
-						</li>
+						</li> */}
 						<li>
 							<a className={activeLink === "interactions" ? "active" : ""} data-name="interactions" onClick={handleClick}>Interactions</a>
 						</li>
@@ -106,8 +135,9 @@ export default function Panel(props: UserProps) {
 				</div>
 				<div className="panel-content" id="panel-content">
 					{content}
+					<div id="changeNavbar" className="changeNavbar">1111</div>
 				</div>
 			</div>
 		</>
 	);
-}
+					}

@@ -14,7 +14,7 @@
 	font-family: "raleway-medium";
 	text-align: center;
 	color: white;
-	padding-top: 50px;
+	//padding-top: 50px;
 	background-color: #0f172a;
 
 	.loginContent {
@@ -23,12 +23,13 @@
 		background-color: #0d2240;
 		width: 500px;
 		height: 600px;
+		margin-top: 5%;
 	}
 
 	.loginBox {
 		height: 100%;
 		margin: auto;
-
+		background-color: #021d36;
 		.loginTitle {
 			margin: auto;
 			font-weight: bold;
