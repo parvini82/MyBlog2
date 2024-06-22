@@ -20,6 +20,7 @@ interface PostData {
 	ImgSrc: string;
 	ImgAlt: string;
 	Content: string;
+	Likes:number;
 	PostId: number;
 }
 function Posts() {
@@ -75,6 +76,7 @@ function Posts() {
 						imageSrc={post.ImgSrc}
 						imageAlt={post.ImgAlt}
 						postId={post.PostId}
+						likes={post.Likes}
 					/>
 				</a>
 				</div>

@@ -144,23 +144,22 @@
 	}
 
 	.interaction-floating-bar {
-		position: fixed;
-		margin-left: 40%;
-		bottom: 0;
-		left: 0;
-		margin-bottom: 20px;
+		width: 13%;
+		position: relative;
+		margin: 0 auto; 
 		align-items: center;
 		display: flex;
-
-		background-color: #334155;
-
-		.interaction-content {
-			display: flex;
-			img {
-				width: 36px;
-				height: 36px;
-				padding: 8px;
-			}
+		border-radius: 10px; 
+		background-color: #516176;
+	  }
+	  
+	  .interaction-content {
+		display: flex;
+		img {
+		  width: 48px;
+		  height: 48px;
+		  padding: 12px;
 		}
-	}
+	  }
+	  
 }

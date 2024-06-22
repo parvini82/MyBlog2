@@ -12,7 +12,12 @@ interface PostProps {
 	ReadTime: string;
 	Content: string;
 	PostId: number;
+	Likes:number;
 }
+function LikeBtnClicked(){
+	
+}
+
 
 function PostPage(props: PostProps) {
 	return (
@@ -46,7 +51,7 @@ function PostPage(props: PostProps) {
 			</div>
 			<div className="interaction-floating-bar">
 				<div className="interaction-content">
-					<img src={like}></img>
+					<img src={like} onClick={LikeBtnClicked}></img>
 					<img src={comment}></img>
 					<img src={bookmark}></img>
 					<img src={share} />

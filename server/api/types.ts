@@ -12,6 +12,7 @@ export interface Posts {
 	ReadTime: number;
 	ImgSrc: string;
 	ImgAlt: string;
+	Likes:number;
 	Content: string;
 
 }

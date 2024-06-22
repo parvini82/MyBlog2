@@ -21,6 +21,7 @@ interface PostData {
 	ImgAlt: string;
 	Content: string;
 	PostId: number;
+	Likes:number;
 }
 interface UserData {
 	UserId: string;
@@ -91,6 +92,7 @@ function App() {
 								Date={post.Date}
 								ReadTime={post.ReadTime}
 								Content={post.Content}
+								Likes={post.Likes}
 							/>
 						}
 					/>
@@ -134,6 +136,7 @@ function Posts() {
 							imageSrc={post.ImgSrc}
 							imageAlt={post.ImgAlt}
 							postId={post.PostId}
+							likes={post.Likes}
 						/>
 					</a>
 				))}

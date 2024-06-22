@@ -6,6 +6,7 @@ interface PostProps {
 	imageSrc: string;
 	imageAlt: string;
 	postId: number;
+	likes:number;
 }
 
 function Post(props: PostProps) {
