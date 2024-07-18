@@ -61,6 +61,20 @@ router.get("/api/users", async (ctx: Koa.Context) => {
 		ctx.body = { error: "Internal Server Error" };
 	}
 });
+// index.ts
+router.post("/api/posts/:id/like", async (ctx: Koa.Context) => {
+	try {
+	  const postId = parseInt(ctx.params.id);
+	  await PostRepository.incrementLikes(postId);
+	  ctx.status = 200;
+	  ctx.body = { message: "Like updated successfully" };
+	} catch (error) {
+	  console.error("Error updating like:", (error as Error)?.message);
+	  ctx.status = 500;
+	  ctx.body = { error: "Internal Server Error" };
+	}
+  });
+  
 
 
 app.use(router.routes())

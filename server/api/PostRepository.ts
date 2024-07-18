@@ -1,5 +1,6 @@
 import { db } from "./database";
 import { PostUpdate, Post } from "./types";
+import {sql} from "kysely"
 
 export async function findPostById(id: number) {
 	return await db.selectFrom("posts").where("PostId", "=", id).selectAll().executeTakeFirst();
@@ -38,7 +39,15 @@ export async function findPeople(criteria: Partial<Post>) {
 
 	return await query.selectAll().execute();
 }
-
+// PostRepository.ts
+export async function incrementLikes(id: number) {
+	await db
+	  .updateTable("posts")
+	  .set({ Likes: sql`Likes + 1` })
+	  .where("PostId", "=", id)
+	  .execute();
+  }
+  
 export async function updatePost(id: number, updateWith: PostUpdate) {
 	await db.updateTable("posts").set(updateWith).where("PostId", "=", id).execute();
 }
