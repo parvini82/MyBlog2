@@ -3,9 +3,8 @@ import like from "../../images/icons8-like-50.png";
 import comment from "../../images/icons8-comment-48.png";
 import bookmark from "../../images/icons8-bookmark-48 (2).png";
 import share from "../../images/icons8-share-24.png";
-import logo from "../../images/logo2.jpg"
+import logo from "../../images/logo2.jpg";
 import ReactMarkdown from "react-markdown";
-
 import React, { useState } from "react";
 
 interface PostProps {
@@ -17,27 +16,33 @@ interface PostProps {
   Likes: number;
 }
 
-function LikeBtnClicked(postId: number, setLikes: React.Dispatch<React.SetStateAction<number>>) {
-	fetch(`http://localhost:8000/api/posts/${postId}/like`, {
-	  method: "POST",
-	  headers: {
-		"Content-Type": "application/json",
-	  },
-	})
-	  .then((response) => {
-		if (!response.ok) {
-		  throw new Error("Network response was not ok");
-		}
-		return response.json();
-	  })
-	  .then((data) => {
-		setLikes(data.likes);
-	  })
-	  .catch((error) => {
-		console.error("There was a problem with the fetch operation:", error);
-	  });
-  }
-  
+function LikeBtnClicked(
+  postId: number,
+  setLikes: React.Dispatch<React.SetStateAction<number>>
+) {
+  fetch(`http://localhost:8000/api/posts/${postId}/like`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.likes !== undefined) {
+        setLikes(data.likes);
+      } else {
+        console.error("Invalid API response: ", data);
+      }
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
 
 function PostPage(props: PostProps) {
   const [likes, setLikes] = useState(props.Likes);
