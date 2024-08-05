@@ -1,5 +1,7 @@
 import { db } from "./database";
 import { PostUpdate, Users } from "./types";
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 // export async function findPostById(id: number) {
 // 	return await db.selectFrom("posts").where("PostId", "=", id).selectAll().executeTakeFirst();
@@ -47,7 +49,20 @@ export async function getAllUsers() {
 	const rows = await db.selectFrom("users").selectAll().execute();
 	return rows;
 }
-
+export const getUserByEmail = async (email: string): Promise<Users | null> => {
+	try {
+	  const user = await db
+		.selectFrom('users')
+		.selectAll()
+		.where('Email', '=', email)
+		.executeTakeFirst();
+  
+	  return user ?? null; 
+	} catch (error) {
+	  console.error('Error fetching user by email:', error);
+	  throw new Error('Failed to fetch user');
+	}
+  };
 //   export async function createPost(Post: NewPost) {
 //     const { insertId } = await db.insertInto('post')
 //       .values(Post)

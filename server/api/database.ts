@@ -17,7 +17,7 @@ const dialect = new MysqlDialect({
 		host: "localhost",
 		user: "root",
 		password: "",
-		database: "Posts",
+		database: "MyBlog",
 		port: 3306,
 		connectionLimit: 10,
 	}),
