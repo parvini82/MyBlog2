@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Context, Next } from 'koa';
 
-const SECRET_KEY = 'your_secret_key';
+const SECRET_KEY = 'Palpali490';
 
 export const authenticateToken = async (ctx: Context, next: Next) => {
   const token = ctx.headers['authorization']?.split(' ')[1];

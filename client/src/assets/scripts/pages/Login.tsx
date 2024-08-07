@@ -1,31 +1,9 @@
+import { useState } from "react";
 import LoginImg from "../../images/account.png";
-import warning from "../../images/warning.png"
-import { useEffect, useState } from "react";
-import { MD5 } from 'crypto-js';
-
-interface UserData {
-	UserId: string;
-	Email: string;
-	Password: string;
-	AccessLevel: string;
-}
-
-function loginClicked(users: UserData[], enteredEmail: string, enteredPassword: string, setError: (error: boolean) => void) {
-	for (const user of users) {
-		if (user.Email.toLowerCase() == enteredEmail.toLowerCase()) {
-			if (MD5(enteredPassword).toString() == user.Password) {
-				window.location.href = "/admin/panel";
-				return;
-			} else {
-				setError(true);
-			}
-		}
-	}
-	setError(true);
-}
+import warning from "../../images/warning.png";
+import { Console } from "console";
 
 export default function Login() {
-	const [users, setUsers] = useState<UserData[]>([]);
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	const [error, setError] = useState<boolean>(false);
@@ -37,40 +15,62 @@ export default function Login() {
 	const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setPassword(event.target.value);
 	};
-	const handleLoginClick = () => {
-		loginClicked(users, email, password, setError);
+
+	const handleLoginClick = async () => {
+		try {
+			const response = await fetch("http://localhost:8000/api/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				
+				body: JSON.stringify({ email, password }),
+			});
+
+			if (response.ok) {
+				const data = await response.json();
+				const token = data.token;
+				console.log(token);
+				localStorage.setItem("token", token); // Store the token in local storage
+				window.location.href = "/admin/panel"; // Redirect to admin panel
+			} else {
+				setError(true); // Set error state to true if login fails
+			}
+		} catch (err) {
+			console.error("Error during login:", err);
+			setError(true);
+		}
 	};
 
-	useEffect(() => {
-		fetch("http://localhost:8000/api/users")
-			.then(async (response) => await response.json())
-			.then((data) => {
-				setUsers(data);
-			})
-			.catch((error) => {
-				console.error("Error fetching Users:", error);
-			});
-	}, []);
 	return (
 		<>
 			<section className="loginPage">
 				<div className="loginBox">
 					<div className="loginContent">
 						<div className="loginTitle">
-							<img src={LoginImg}></img>
+							<img src={LoginImg} alt="Login" />
 						</div>
 
 						<div className="emailInput">
-							<input placeholder="Email" value={email} onChange={handleEmailChange} />
+							<input
+								placeholder="Email"
+								value={email}
+								onChange={handleEmailChange}
+							/>
 						</div>
 
 						<div className="passwordInput">
-							<input placeholder="Password" type="password" value={password} onChange={handlePasswordChange} />
+							<input
+								placeholder="Password"
+								type="password"
+								value={password}
+								onChange={handlePasswordChange}
+							/>
 						</div>
 
 						{error && (
-							<div className="error" style={{display: 'flex'}}>
-								<img src={warning}></img>
+							<div className="error" style={{ display: "flex" }}>
+								<img src={warning} alt="Warning" />
 								<p>Password or Email is not correct!</p>
 							</div>
 						)}

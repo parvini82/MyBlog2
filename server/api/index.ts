@@ -2,6 +2,7 @@ import Koa from "koa";
 import Router from "koa-router";
 import cors from "@koa/cors";
 import dotenv from "dotenv";
+import bodyParser from "koa-bodyparser"; // Import koa-bodyparser
 import * as PostRepository from "./PostRepository";
 import * as UserRepository from "./UserRepository";
 import { login } from "./auth/authService"; // Import the login service
@@ -11,6 +12,7 @@ const router = new Router();
 
 dotenv.config();
 app.use(cors());
+app.use(bodyParser()); // Use the body parser middleware
 
 // Route to get all posts
 router.get("/api/posts", async (ctx: Koa.Context) => {
@@ -53,7 +55,7 @@ router.post("/api/posts/:id/like", async (ctx: Koa.Context) => {
 interface LoginRequestBody {
 	email: string;
 	password: string;
-  }
+}
 
 // Login route
 router.post("/api/login", async (ctx: Koa.Context) => {
