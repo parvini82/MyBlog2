@@ -24,6 +24,11 @@ interface PostData {
 	Likes:number;
 	PostId: number;
 }
+function handleLogout(){
+	localStorage.removeItem("token");
+	localStorage.removeItem("email");
+    window.location.href = "/admin/login";
+}
 function Posts() {
 	const [posts, setPosts] = useState<PostData[]>([]);
 	//console.log(posts);
@@ -63,6 +68,7 @@ function Posts() {
 		
 		
 	};
+	
 	return (
 		<div >
 			{posts.map((post) => (
@@ -126,7 +132,7 @@ export default function Panel(props: UserProps) {
             <p className="name">{props.Firstname} {props.Lastname}</p>
             
         </div>
-        <div className="logout">
+        <div className="logout" onClick={handleLogout}>
             <img src={logout} alt="Logout Icon" />
         </div>
     </div>
