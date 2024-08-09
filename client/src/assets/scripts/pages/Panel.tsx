@@ -1,5 +1,6 @@
 import "../../styles/Panel.scss";
 import logo from "../../images/logo2.jpg";
+import logout from "../../images/logout.png";
 import Post from "./../components/post";
 import MyForm from "../components/addpost";
 import { useEffect, useState } from "react";
@@ -118,14 +119,19 @@ export default function Panel(props: UserProps) {
 		<>
 			<div className="Panel">
 				<div className="leftnavbar">
-					<div className="UserInfo">
-						<div className="logo3">
-							<img src={logo}></img>
-							<div className="name-about">
-								<p className="name">{props.Firstname} {props.Lastname}</p>
-							</div>
-						</div>
-					</div>
+				<div className="UserInfo">
+    		<div className="logo3">
+        	<img className="profile-img" src={logo} alt="User Logo" />
+        	<div className="name-about">
+            <p className="name">{props.Firstname} {props.Lastname}</p>
+            
+        </div>
+        <div className="logout">
+            <img src={logout} alt="Logout Icon" />
+        </div>
+    </div>
+</div>
+
 					<ul>
 						<li>
 							<a className={activeLink === "posts" ? "active" : ""} data-name="posts" onClick={handleClick}>Your Posts</a>
