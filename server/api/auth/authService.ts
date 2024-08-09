@@ -9,7 +9,7 @@ export const login = async (email: string, password: string): Promise<string> =>
   if (!user) throw new Error('Invalid email or password');
   
   const validPassword = await bcrypt.compare(password, user.Password);
-  //console.log(password+" ,"+user.Password);
+  console.log(password+" ,"+user.Password);
   if (!validPassword) throw new Error('Invalid email or password');
 
   const token = jwt.sign({ id: user.UserId, email: user.Email }, SECRET_KEY, { expiresIn: '1h' });

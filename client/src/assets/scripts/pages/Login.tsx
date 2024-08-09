@@ -23,15 +23,14 @@ export default function Login() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				
 				body: JSON.stringify({ email, password }),
 			});
-
+	
 			if (response.ok) {
 				const data = await response.json();
 				const token = data.token;
-				console.log(token);
-				localStorage.setItem("token", token); // Store the token in local storage
+				localStorage.setItem("token", token);
+				localStorage.setItem("email", email);
 				window.location.href = "/admin/panel"; // Redirect to admin panel
 			} else {
 				setError(true); // Set error state to true if login fails
@@ -41,6 +40,7 @@ export default function Login() {
 			setError(true);
 		}
 	};
+	
 
 	return (
 		<>

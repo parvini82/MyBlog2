@@ -35,6 +35,7 @@ interface UserData {
 }
 function App() {
 	const [posts, setPosts] = useState<PostData[]>([]);
+    const [loggedInUser, setLoggedInUser] = useState<UserData | null>(null);
 	console.log(posts);
 
 	useEffect(() => {
@@ -51,35 +52,43 @@ function App() {
 	console.log(Users);
 
 	useEffect(() => {
-		fetch("http://localhost:8000/api/users")
-			.then(async (response) => await response.json())
-			.then((data) => {
-				setUsers(data);
-			})
-			.catch((error) => {
-				console.error("Error fetching Users:", error);
-			});
-	}, []);
+        fetch("http://localhost:8000/api/users")
+          .then(async (response) => await response.json())
+          .then((data) => {
+            setUsers(data);
+    
+            const email = localStorage.getItem("email");
+    
+            if (email) {
+              const currentUser = data.find(
+                (user: UserData) => user.Email.toLowerCase() === email.toLowerCase()
+              );
+              setLoggedInUser(currentUser || null);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching users:", error);
+          });
+      }, []);
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/admin/login" element={<Login />} />
-				{Users.map((users) => (
-					<Route
-						key={users.UserId}
-						path={`/admin/panel`}
-						element={
-							<Panel
-								Firstname={users.Firstname}
-								Lastname={users.Lastname}
-								Description={users.Description}
-								ImgUrl={users.ImgUrl}
-								AccessLevel={users.AccessLevel}
-							/>
-						}
-					/>
-				))}
+				{loggedInUser && (
+          <Route
+            path={`/admin/panel`}
+            element={
+              <Panel
+                Firstname={loggedInUser.Firstname}
+                Lastname={loggedInUser.Lastname}
+                Description={loggedInUser.Description}
+                ImgUrl={loggedInUser.ImgUrl}
+                AccessLevel={loggedInUser.AccessLevel}
+              />
+            }
+          />
+        )}
 
 				{posts.map((post) => (
 					<Route
